@@ -3,7 +3,7 @@ import s from './Menu.module.css';
 
 function Menu() {
   return (
-    <div>
+    <div className={s.menu}>
       {menuConfig.map(menuItem => (
         <div key={menuItem.id} className={s.menuItem}>
           {menuItem.icon}
