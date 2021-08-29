@@ -11,11 +11,26 @@ class Section extends React.Component {
     cities: [],
   };
 
+  componentDidMount() {
+    const parsedSities = JSON.parse(localStorage.getItem('cities'));
+    if (parsedSities && Array.isArray(parsedSities)) {
+      this.setState({ cities: parsedSities });
+    }
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('cities', JSON.stringify(this.state.cities));
+  }
+
   handleRemove = id => {
     this.setState({
       cities: this.state.cities.filter(city => city.id !== id),
     });
   };
+
+  // handleClearAll = () => {
+  //   localStorage.removeItem('cities');
+  // };
 
   handleSubmit = city => {
     this.setState(prevState => ({
@@ -40,6 +55,12 @@ class Section extends React.Component {
             />
           );
         })}
+        {/* {cities.length > 5 && (
+          <Button
+            onClick={this.handleClearAll}
+            buttonName="Удалить все города"
+          />
+        )} */}
         {showed && <Form onSubmit={this.handleSubmit} />}
         <Button
           onClick={() => {
