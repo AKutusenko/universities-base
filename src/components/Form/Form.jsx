@@ -17,13 +17,15 @@ class Form extends Component {
 
   render() {
     const { value } = this.state;
+    const { title, placeholder } = this.props;
 
     return (
       <form style={{ marginBottom: '22px' }} onSubmit={this.onSubmit}>
-        <p>Добавление города</p>
+        <p>{title}</p>
         <input
           className={s.input}
           type="text"
+          placeholder={placeholder}
           value={value}
           onChange={e => {
             this.setState({ value: e.currentTarget.value });

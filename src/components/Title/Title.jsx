@@ -1,7 +1,11 @@
-import s from './Title.module.css';
+import { Container, Title as TitleTag } from './Title.styled';
 
 function Title({ title }) {
-  return <p className={s.title}>{title}</p>;
+  return (
+    <Container>
+      <TitleTag>{title}</TitleTag>
+    </Container>
+  );
 }
 
 export { Title };

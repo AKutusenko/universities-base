@@ -1,16 +1,13 @@
 {
   "cities": [
     {
-      "id": "OB4y6u9Xj",
-      "name": "s"
+      "id": "VOQQyVmp9",
+      "name": "Крыжополь"
     },
     {
-      "id": "3k4HDRvAo",
-      "name": "s"
-    },
-    {
-      "id": "CC5LhAqDb",
-      "name": "x"
+      "id": "piwi2Wzy0",
+      "name": "Залупка"
     }
-  ]
+  ],
+  "faculties": []
 }
