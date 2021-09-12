@@ -9,7 +9,7 @@ import { useToggle } from '../../hooks/use-toggle';
 
 const BASE_URL = 'http://localhost:4000';
 
-function Section({ title, placeholder, formTitle, url }) {
+function Section({ title, placeholder, formTitle, url, path }) {
   const [showed, toggleShowed] = useToggle(false);
   const [items, setitems] = useState([]);
   const [loading, setloading] = useState(false);
@@ -63,7 +63,7 @@ function Section({ title, placeholder, formTitle, url }) {
 
   return (
     <div style={{ marginTop: '40px', marginBottom: '40px' }}>
-      <Title title={title} />
+      <Title title={title} path={path} />
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {items.map(city => {
@@ -74,6 +74,7 @@ function Section({ title, placeholder, formTitle, url }) {
             name={city.name}
             buttonName="Удалить"
             handleClick={handleRemove}
+            url={url}
           />
         );
       })}

@@ -1,13 +1,18 @@
 {
   "cities": [
     {
-      "id": "VOQQyVmp9",
-      "name": "Крыжополь"
-    },
-    {
-      "id": "piwi2Wzy0",
-      "name": "Залупка"
+      "id": "GA6RPhfCE",
+      "name": "desa"
     }
   ],
-  "faculties": []
+  "faculties": [
+    {
+      "id": "pTucuyanw",
+      "name": "Loxi"
+    },
+    {
+      "id": "BYT0RWYFT",
+      "name": "Debili"
+    }
+  ]
 }

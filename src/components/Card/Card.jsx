@@ -1,22 +1,17 @@
-import { Component } from 'react';
 import { Button } from '../Button/Button';
+import { Link } from 'react-router-dom';
 
-class Card extends Component {
-  handleClick = () => {
-    const { id, handleClick } = this.props;
+function Card({ id, name, buttonName, handleClick, url }) {
+  const onClick = () => {
     handleClick(id);
   };
 
-  render() {
-    const { id, name, buttonName } = this.props;
-
-    return (
-      <div key={id}>
-        <span>{name}</span>
-        <Button buttonName={buttonName} onClick={this.handleClick} />
-      </div>
-    );
-  }
+  return (
+    <div key={id}>
+      <Link to={{ pathname: `/${url}/${id}` }}>{name}</Link>
+      <Button buttonName={buttonName} onClick={onClick} />
+    </div>
+  );
 }
 
 export { Card };
