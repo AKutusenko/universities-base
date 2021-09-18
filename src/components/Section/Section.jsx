@@ -6,8 +6,7 @@ import { Title } from '../Title/Title';
 import { Form } from '../Form/Form';
 import { Card } from '../Card/Card';
 import { useToggle } from '../../hooks/use-toggle';
-
-const BASE_URL = 'http://localhost:4000';
+import { BASE_URL } from '../../constans/api';
 
 function Section({ title, placeholder, formTitle, url, path }) {
   const [showed, toggleShowed] = useToggle(false);
@@ -36,7 +35,7 @@ function Section({ title, placeholder, formTitle, url, path }) {
       .then(() => {
         setloading(false);
       });
-  }, [url]);
+  }, []);
 
   const handleRemove = id => {
     setitems(items.filter(city => city.id !== id));

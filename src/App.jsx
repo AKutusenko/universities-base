@@ -1,10 +1,14 @@
 import './App.css';
 import { Route, Switch } from 'react-router';
+import { lazy, Suspense } from 'react';
 import { Home } from './components/pages/Home/Home';
 import { Faculties } from './components/pages/Faculties/Faculties';
+// import { Faculty } from './components/pages/Faculty/Faculty';
 import { NotFound } from './components/pages/NotFound/NotFound';
 import { Sidebar } from './components/Sidebar/Sidebar';
 import { routes } from './utils/routes';
+
+const Faculty = lazy(() => import('./components/pages/Faculty/Faculty'));
 
 export default function App() {
   return (
@@ -16,11 +20,14 @@ export default function App() {
       }}
     >
       <Sidebar />
-      <Switch>
-        <Route path={routes.home} exact component={Home} />
-        <Route path={routes.faculties} component={Faculties} />
-        <Route component={NotFound} />
-      </Switch>
+      <Suspense fallback={<div>ИДет загрузка...</div>}>
+        <Switch>
+          <Route path={routes.home} exact component={Home} />
+          <Route path={routes.faculties} exact component={Faculties} />
+          <Route path={routes['faculties.id']} component={Faculty} />
+          <Route component={NotFound} />
+        </Switch>
+      </Suspense>
     </div>
   );
 }
