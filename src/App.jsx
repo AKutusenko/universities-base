@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router';
 import { lazy, Suspense } from 'react';
 import { Home } from './components/pages/Home/Home';
 import { Faculties } from './components/pages/Faculties/Faculties';
+import { Cities } from './components/pages/Cities/Cities';
 // import { Faculty } from './components/pages/Faculty/Faculty';
 import { NotFound } from './components/pages/NotFound/NotFound';
 import { Sidebar } from './components/Sidebar/Sidebar';
@@ -25,6 +26,8 @@ export default function App() {
           <Route path={routes.home} exact component={Home} />
           <Route path={routes.faculties} exact component={Faculties} />
           <Route path={routes['faculties.id']} component={Faculty} />
+          <Route path={routes.cities} exact component={Cities} />
+
           <Route component={NotFound} />
         </Switch>
       </Suspense>

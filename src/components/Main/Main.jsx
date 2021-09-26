@@ -13,14 +13,14 @@ function Main() {
           title="Города"
           placeholder="Город"
           formTitle="Добавление города"
-          url="cities"
+          // url="cities"
           path="/cities"
         />
         <Section
           title="Факультеты"
           placeholder="Факультет"
           formTitle="Добавление факультета"
-          url="faculties"
+          // url="faculties"
           path="/faculties"
         />
       </>
